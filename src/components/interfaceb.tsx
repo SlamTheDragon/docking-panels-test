@@ -6,6 +6,8 @@ const InterfaceB = () => {
     const [draggingState, setDragging] = useState(false);
     const [anchorPoint, setAnchorPoint] = useState({ X: 0, Y: 0 });
     const [offset, setOffset] = useState({ X: 0, Y: 0 });
+    const [DimensionX, setDimensionX] = useState(window.innerWidth)
+    const [DimensionY, setDimensionY] = useState(window.innerHeight)
     const [dTop, setTop] = useState(300);
     const [dRight, setRight] = useState(300);
     const [dBottom, setBottom] = useState(300);
@@ -66,8 +68,8 @@ const InterfaceB = () => {
 
         } else if (side === 'right') {
             const handleMouseMove = (e: { clientX: any; }) => {
-                const value = anchorPoint.X - e.clientX;
-                setRight((value));
+                const value = anchorPoint.X - (e.clientX - DimensionX);
+                setRight(value);
             };
             window.addEventListener('mousemove', handleMouseMove);
 
@@ -79,7 +81,7 @@ const InterfaceB = () => {
 
         } else if (side === 'bottom') {
             const handleMouseMove = (e: { clientY: any; }) => {
-                const value = anchorPoint.Y - e.clientY;
+                const value = anchorPoint.Y - (e.clientY - DimensionY);
                 setBottom(value);
             };
             window.addEventListener('mousemove', handleMouseMove);
@@ -107,7 +109,7 @@ const InterfaceB = () => {
 
         } else if (side === 'top-right') {
             const handleMouseMove = (e: { clientX: any; clientY: any; }) => {
-                const valueX = anchorPoint.X - e.clientX;
+                const valueX = anchorPoint.X - (e.clientX - DimensionX);
                 const valueY = e.clientY - anchorPoint.Y;
                 setRight(valueX);
                 setTop(valueY);
@@ -123,7 +125,7 @@ const InterfaceB = () => {
         } else if (side === 'bottom-left') {
             const handleMouseMove = (e: { clientX: any; clientY: any; }) => {
                 const valueX = e.clientX - anchorPoint.X;
-                const valueY = anchorPoint.Y - e.clientY;
+                const valueY = anchorPoint.Y - (e.clientY - DimensionY);
                 setLeft(valueX);
                 setBottom(valueY);
             };
@@ -137,8 +139,8 @@ const InterfaceB = () => {
 
         } else if (side === 'bottom-right') {
             const handleMouseMove = (e: { clientX: any; clientY: any; }) => {
-                const valueX = anchorPoint.X - e.clientX
-                const valueY = anchorPoint.Y - e.clientY
+                const valueX = anchorPoint.X - (e.clientX - DimensionX)
+                const valueY = anchorPoint.Y - (e.clientY - DimensionY)
                 setRight(valueX);
                 setBottom(valueY);
             };

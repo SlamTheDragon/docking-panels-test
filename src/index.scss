@@ -140,3 +140,11 @@
 .d {
     position: initial;
 }
+
+
+// ===============[ new section ]===============
+
+.view {
+    overflow: hidden;
+    @include wight(100vw, 100vh);
+}
