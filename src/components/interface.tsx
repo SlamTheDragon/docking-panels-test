@@ -14,7 +14,6 @@ export default function Interface() {
 
     useEffect(() => {
         function handleMouseUp() {
-            
             setDragging(false);
             foo()
         }

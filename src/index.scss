@@ -41,7 +41,8 @@
 
 .panel {
     @include wight(100%, 100%);
-    background-color: rgb(235, 235, 235)
+    background-color: rgb(235, 235, 235);
+    margin-top: 5px;
 }
 
 .f,
@@ -92,18 +93,18 @@
         width: 100%;
 
         cursor: ns-resize;
-        inset: -16px 0px;
+        inset: -15px 0px;
     }
 
     .top-right {
         cursor: nesw-resize;
         transform: scale(2.5, 2.5);
-        inset: -16px 4px;
+        inset: -15px 4px;
     }
 
     .right {
         cursor: ew-resize;
-        inset: 0px 4px;
+        inset: 0px 3px;
     }
 
     .bottom-right {
@@ -127,13 +128,13 @@
 
     .left {
         cursor: ew-resize;
-        inset: 0px -4px;
+        inset: 0px -3px;
     }
 
     .top-left {
         cursor: nwse-resize;
         transform: scale(2.5, 2.5);
-        inset: -16px -4px;
+        inset: -15px -4px;
     }
 }
 

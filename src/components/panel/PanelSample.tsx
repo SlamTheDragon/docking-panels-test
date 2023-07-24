@@ -6,6 +6,7 @@ interface Items {
 
 export default function PanelSample(props: Items) {
     return (
+        <>
         <div className="panel">
             
             <div className="p-handle"></div>
@@ -13,5 +14,6 @@ export default function PanelSample(props: Items) {
             <h1>{props.itemTitle}</h1>
             {props.itemDescription}
         </div>
+        </>
     );
 }
